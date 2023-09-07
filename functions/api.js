@@ -3,6 +3,7 @@ const serverless = require('serverless-http');
 const morgan = require('morgan');
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 dotenv.config({ path: './config.env' });
 
@@ -11,6 +12,7 @@ const seriesRouter = require('../routes/seriesRoutes');
 const app = express();
 
 // 1) MIDDLEWARES
+app.use(cors());
 console.log(process.env.NODE_ENV);
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
