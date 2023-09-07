@@ -10,7 +10,7 @@ dotenv.config({ path: './config.env' });
 const seriesRouter = require('../routes/seriesRoutes');
 
 const app = express();
-
+// Hey
 // 1) MIDDLEWARES
 app.use(cors());
 console.log(process.env.NODE_ENV);
