@@ -31,10 +31,11 @@ app.use((req, res, next) => {
 });
 
 // 2) ROUTE HANDLERS
-const DB = process.env.DATABASE.replace(
-  '<PASSWORD>',
-  process.env.DATABASE_PASSWORD,
-);
+// const DB = process.env.DATABASE.replace(
+//   '<PASSWORD>',
+//   process.env.DATABASE_PASSWORD,
+// );
+const DB = `mongodb+srv://amin:${process.env.DATABASE_PASSWORD}@natourscluster.ze8boia.mongodb.net/imdb?retryWrites=true&w=majority`;
 
 mongoose
   .connect(DB, {
