@@ -77,17 +77,17 @@ exports.whatIsYear = async (req, res) => {
     // console.log(series[indexOfSeries]);
 
     const ans = series[indexOfSeries].year;
-    console.log(ans);
+    // console.log(ans);
 
     const rng = getRandom([2, 3, 4], 1)[0];
-    console.log(rng);
+    // console.log(rng);
 
     const arrayOfPossibleOptions =
       ans !== 2023
         ? arrayRange(ans - rng, ans + rng, 1).filter((item, i) => i !== rng)
         : arrayRange(ans - 2 * rng, ans - 1, 1);
 
-    console.log(arrayOfPossibleOptions);
+    // console.log(arrayOfPossibleOptions);
 
     const ops = getRandom(arrayOfPossibleOptions, 3);
     const opsIndex = getRandom([1, 2, 3, 4], 4);

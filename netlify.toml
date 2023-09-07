@@ -2,6 +2,7 @@
     command = 'npm run build'
     functions= 'functions'
     publish = 'dist'
+    node_bundler = "esbuild"
 
 [[redirects]]
     to="/.netlify/functions/:splat"
