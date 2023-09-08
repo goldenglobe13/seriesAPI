@@ -4,6 +4,9 @@ const morgan = require('morgan');
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const io = require('socket.io')();
+const port = process.env.PORT || 3000;
+const path = require('path');
 
 dotenv.config({ path: '../config.env' });
 
@@ -51,5 +54,17 @@ mongoose
 // 3) ROUTES
 
 app.use('/api/v1/series', seriesRouter);
+
+// app.get('/', (req, res) => {
+//   res.sendFile(path.join(__dirname, 'index.html'));
+// });
+
+io.on('connection', (socket) => {
+  socket.on('chat message', (msg) => {
+    io.emit('chat message', msg);
+  });
+});
+
+io.listen(port);
 
 module.exports.handler = serverless(app);
