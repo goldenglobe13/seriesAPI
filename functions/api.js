@@ -36,10 +36,11 @@ app.use((req, res, next) => {
 });
 
 // 2) ROUTE HANDLERS
-const DB = process.env.DATABASE.replace(
-  '<PASSWORD>',
-  process.env.DATABASE_PASSWORD,
-);
+// const DB = process.env.DATABASE.replace(
+//   '<PASSWORD>',
+//   process.env.DATABASE_PASSWORD,
+// );
+const DB = process.env.DATABASE_FULL;
 
 mongoose
   .connect(DB, {
