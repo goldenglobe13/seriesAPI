@@ -40,7 +40,7 @@ app.use((req, res, next) => {
 //   '<PASSWORD>',
 //   process.env.DATABASE_PASSWORD,
 // );
-const DB = process.env.DATABASE_FULL;
+const DB = `mongodb+srv://amin:DSFKEeuifg3RweVQ@natourscluster.ze8boia.mongodb.net/imdb?retryWrites=true&w=majority`;
 
 mongoose
   .connect(DB, {
